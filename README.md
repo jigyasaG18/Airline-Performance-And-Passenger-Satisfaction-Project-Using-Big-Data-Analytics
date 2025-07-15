@@ -1,205 +1,242 @@
 # ✈️ 10-Year U.S. Airline Performance Analytics (2009–2018)
 
-This project analyzes a decade of U.S. domestic airline performance data from **2009 to 2018**. The dataset (~3GB) was processed using **Hadoop (Cloudera)** and **Hive queries**, with all insights visualized in **Power BI dashboards**.
+This project explores 10 years of U.S. airline performance data (2009–2018), derived from \~3GB of flight operation records. The dataset was processed using **Hadoop in Cloudera**, queried with **Hive**, and visualized using **Power BI** dashboards.
 
 ---
 
-## 🛠️ Project Stack
+## 📊 Project Overview
 
-- **Data Volume:** ~3 GB (CSV files)
-- **Processing Framework:** Apache Hadoop (Cloudera)
-- **Query Language:** HiveQL
-- **Visualization:** Power BI
-- **Scope:** 10 years of airline delay, air time, and diversion performance across carriers, airports, and routes.
+* **Time Frame:** 2009 – 2018
+* **Data Size:** \~3GB (raw CSV format)
+* **Tools Used:**
 
----
-
-## 📊 Key Metrics Tracked
-
-- On-Time Arrival Rate (%)
-- Average Arrival & Departure Delay (in minutes)
-- Percentage of Flights Delayed
-- Longest Recorded Delay (in hours)
-- Average Air Time
-- Number of Diverted Flights
-- Taxi-In and Taxi-Out Time
-- Scheduled vs. Actual Flight Time
-- Carrier-wise Flight Distribution
+  * Hadoop (Cloudera)
+  * Hive (SQL-like query execution)
+  * Power BI (Visualization)
+* **Focus:** Arrival/Departure delays, on-time performance, diversions, carrier efficiency, distance vs. air time
 
 ---
 
-## 📈 Overall Performance (2009–2018)
+## 📊 Key Performance Metrics
 
-| Metric                  | Best Year | Worst Year |
-|------------------------|-----------|------------|
-| On-Time Rate           | 2016 (75%)| 2014 (47%) |
-| Arrival Delay Avg      | 2016 (21m)| 2017 (46m) |
-| Departure Delay Avg    | 2016 (19m)| 2014 (46m) |
-| % Flights Delayed      | 2016 (8%) | 2014 (38%) |
-| Longest Delay          | 2017 (13.6h) | 2010 (9.9h) |
-| Avg Air Time           | 2018 (3.16h) | 2012 (1.21h) |
-
-**Trend Insight:**  
-Performance peaked in **2016** due to system optimization, followed by a regression in **2017**. **2014** was the most challenging year for operations.
+* On-Time Arrival Rate (%)
+* Average Arrival & Departure Delay (mins)
+* % of Flights Delayed
+* Longest Delay (hrs)
+* Average Air Time (hrs)
+* Carrier Delay Performance
+* Scheduled vs. Actual Flight Time
+* Taxi-in and Taxi-out times
+* Diversion trends by airport
 
 ---
 
-## 📅 Year-by-Year Analysis and Recommendations
+## 📊 Overall Performance Summary (2009–2018)
+
+| Metric              | Best Year    | Worst Year   |
+| ------------------- | ------------ | ------------ |
+| On-Time Rate        | 2016 (75%)   | 2014 (47%)   |
+| Arrival Delay Avg   | 2016 (21m)   | 2017 (46m)   |
+| Departure Delay Avg | 2016 (19m)   | 2014 (46m)   |
+| % Flights Delayed   | 2016 (8%)    | 2014 (38%)   |
+| Longest Delay       | 2017 (13.6h) | 2010 (9.9h)  |
+| Avg Air Time        | 2018 (3.16h) | 2012 (1.21h) |
+
+**Insight:** 2016 stands out as the most efficient year. 2014 and 2017 were the most problematic for delays.
 
 ---
+
+## 📅 Yearly Insights & Recommendations
 
 ### 🔹 2009
 
-**Stats:**
-- Flights: 3,503 | % Delayed: 15%
-- Arrival Delay: 27m | Departure Delay: 30m
-- On-Time: 66% | Longest Delay: 7.83h
+**Insights:**
+
+* Flights: 3,503 | 15% delayed
+* Avg Delays: Arrival 27m, Departure 30m
+* Top Delayed Carriers: YV, OH
+* Diversion Hotspots: IAH, SLC, DEN
 
 **Recommendations:**
-- Strengthen gate turnaround processes.
-- Carriers like **OO and XE** showed high delay contribution—audit their scheduling and maintenance practices.
 
----
+1. Optimize carrier YV's scheduling and maintenance.
+2. Increase gate availability at IAH, SLC.
+3. Train ground staff on delay mitigation.
+4. Adjust scheduling buffers during peak.
+5. Monitor taxi-in/out times at high-volume hubs.
 
 ### 🔹 2010
 
-**Stats:**
-- Flights: 9,576 | % Delayed: 16%
-- Arrival Delay: 25m | Departure Delay: 23m
-- On-Time: 64% | Longest Delay: 9.9h
+**Insights:**
+
+* Flights: 9,576 | 16% delayed | Longest Delay: 9.9h
+* Delayed carriers: MQ, US, DL
+* Diversions from DEN, ATL, PHX
 
 **Recommendations:**
-- Improve weather-delay response, especially at major hubs like **DEN, ATL, LAX**.
-- Optimize flight frequency for underperforming carriers (e.g., **MQ, YV**).
 
----
+1. Improve carrier MQ’s routing.
+2. Reevaluate ATL gate turnarounds.
+3. Predict peak delays using Hive ML models.
+4. Optimize crew resourcing for UA and US.
+5. Coordinate taxiing schedules at DEN.
 
 ### 🔹 2011
 
-**Stats:**
-- Flights: 2,383 | % Delayed: 28%
-- Arrival Delay: 35m | Departure Delay: 33m
-- On-Time: 50% | Longest Delay: 7.33h
+**Insights:**
+
+* Flights: 2,383 | 28% delayed | Avg Delays: 35m arrival
+* OO (62.57%) had the most flights with significant delays
 
 **Recommendations:**
-- Focus on delay-heavy carriers like **MQ, OO** with high arrival delay averages.
-- Increase buffer time in high-risk routes and seasonal adjustments.
 
----
+1. Audit operations of OO and MQ.
+2. Reduce diversions at SFO and SEA.
+3. Improve weather-response turnaround.
+4. Introduce automated taxi routing.
+5. Enable dynamic gate reallocation.
 
 ### 🔹 2012
 
-**Stats:**
-- Flights: 1,006 | % Delayed: 17%
-- Arrival Delay: 25m | Departure Delay: 23m
-- On-Time: 66% | Longest Delay: 5.33h
+**Insights:**
+
+* Flights: 1,006 | 17% delayed | Shortest average air time
+* Primary carriers: OO (70%), MQ
 
 **Recommendations:**
-- Maintain current delay-reduction efforts.
-- Reduce ground handling times at high-delay airports like **DEN, LAX, SFO**.
 
----
+1. Consolidate OO as primary operator.
+2. Reduce turnaround time at SLC and DEN.
+3. Maintain short-haul consistency.
+4. Integrate data-driven scheduling using Hive.
+5. Use taxi-in analytics to limit ground hold.
 
 ### 🔹 2013
 
-**Stats:**
-- Flights: 1,095 | % Delayed: 28%
-- Arrival Delay: 22m | Departure Delay: 22m
-- On-Time: 45% | Longest Delay: 2.90h
+**Insights:**
+
+* Flights: 1,095 | 28% delayed | On-Time: 45%
+* Key carriers: WN (85%), VX
 
 **Recommendations:**
-- Investigate causes of sharp decline in on-time rate despite lower delays.
-- Reevaluate scheduling buffers and coordination at medium hubs.
 
----
+1. Improve coordination between WN & VX.
+2. Reduce taxiing times at BWI, DEN.
+3. Optimize route planning from MCI.
+4. Review scheduling lags in short-hauls.
+5. Enhance delay notification systems.
 
 ### 🔹 2014
 
-**Stats:**
-- Flights: 1,006 | % Delayed: 38% ❗
-- Arrival Delay: 41m ❗ | Departure Delay: 46m ❗
-- On-Time: 47% | Longest Delay: 7.25h
+**Insights:**
+
+* Flights: 1,006 | 38% delayed | Worst year overall
+* Avg Delays: 41m arrival, 46m departure
 
 **Recommendations:**
-- Major overhauls needed in ground operations.
-- Delay-heavy carriers like **EV and AA** require full operational audits.
-- Weather forecasting and proactive rerouting must be prioritized.
 
----
+1. Redesign flight windows for EV.
+2. Reinforce maintenance pre-checks.
+3. Add gate buffer in peak slots.
+4. Install gate availability prediction tools.
+5. Focus on weather-based diversion strategy.
 
 ### 🔹 2015
 
-**Stats:**
-- Flights: 1,009 | % Delayed: 24%
-- Arrival Delay: 32m | Departure Delay: 34m
-- On-Time: 53% | Longest Delay: 5.12h
+**Insights:**
+
+* Flights: 1,009 | 24% delayed | Top carriers: OO, NK, MQ
 
 **Recommendations:**
-- Continue recovery momentum from 2014.
-- Enhance carrier performance transparency—track per-route delays more closely.
 
----
+1. Reschedule late-night flights.
+2. Automate diversion responses.
+3. Reduce LAX and SEA congestion.
+4. Align MQ flights with lower-delay corridors.
+5. Optimize HA ground operations.
 
-### 🔹 2016 ✅
+### 🔹 2016
 
-**Stats:**
-- Flights: 1,022 | % Delayed: 8%
-- Arrival Delay: 21m ✅ | Departure Delay: 19m ✅
-- On-Time: 75% ✅ | Longest Delay: 7.42h
+**Insights:**
+
+* Flights: 1,022 | 8% delayed | Best performing year
+* Carriers: DL (66%), AS
 
 **Recommendations:**
-- Use 2016 as a **benchmark model** across all metrics.
-- Analyze what worked well for **DL and AS**, which outperformed other carriers.
 
----
+1. Use DL’s 2016 operations as baseline.
+2. Replicate AS's air time consistency.
+3. Promote taxi-in strategies across hubs.
+4. Enable real-time ETL feedback loops.
+5. Expand on high-performance route modeling.
 
 ### 🔹 2017
 
-**Stats:**
-- Flights: 1,011 | % Delayed: 22%
-- Arrival Delay: 46m ❗ | Departure Delay: 45m ❗
-- On-Time: 63% | Longest Delay: 13.58h ❗
+**Insights:**
+
+* Flights: 1,011 | 22% delayed | Longest Delay: 13.58h
+* Carriers: AA, B6, HA, NK
 
 **Recommendations:**
-- Investigate root causes of extreme long delays (13+ hours).
-- Restructure contingency planning during storm and holiday seasons.
 
----
+1. Audit 13h+ delays and implement escalation protocols.
+2. Reengineer AA and B6 flight planning.
+3. Improve taxi sequencing at BOS and JFK.
+4. Strengthen pre-boarding logistics.
+5. Apply AI to predict gate hold times.
 
 ### 🔹 2018
 
-**Stats:**
-- Flights: 1,939 | % Delayed: 13%
-- Arrival Delay: 37m | Departure Delay: 35m
-- On-Time: 72% | Longest Delay: 5.67h
+**Insights:**
+
+* Flights: 1,939 | 13% delayed | Avg Air Time: 3.16 hrs
+* Carriers: UA (89%), AS
 
 **Recommendations:**
-- Performance rebounded strongly—continue carrier partnerships like **UA + AS**.
-- Optimize long-haul scheduling to improve arrival precision.
+
+1. Expand UA-AS scheduling sync.
+2. Reduce gate congestion at SFO, LAX.
+3. Add layover buffers for long-haul.
+4. Reinforce diversion handling protocol.
+5. Track long-route reliability KPIs.
 
 ---
 
-## 💡 Final Recommendations
+## ✅ Cross-Year Strategic Recommendations
 
-- **Adopt 2016’s best practices** in scheduling, coordination, and fleet maintenance across carriers.
-- **Implement predictive delay analytics** using ML on historical Hive outputs.
-- Strengthen **seasonal planning** in Q3 and Q4 for weather-prone regions.
-- **Audit underperforming carriers annually** to enforce SLAs.
-- Deploy **real-time monitoring systems** for diversion-prone airports (e.g., IAH, SFO, JFK).
+1. Model operations after 2016’s success year.
+2. Focus delay interventions on MQ, EV, YV, NK.
+3. Reduce diversions from IAH, SFO, LAX using Hive traffic patterns.
+4. Implement Hive-based delay prediction systems.
+5. Use Power BI alerts for SLA breaches in real-time.
 
 ---
 
 ## 🗂️ Repository Structure
 
 ```
-
 .
-├── hive\_queries/               # Hive queries for analysis
-├── dashboards/                 # Power BI dashboards (.pbix/.pdf)
-├── data\_config/               # Hadoop ingestion & ETL config
-├── insights/                  # Markdown files for yearly insights
-├── README.md                  # This detailed documentation
-
+├── hive_queries/               # Hive queries for processing
+├── dashboards/                 # Power BI dashboards
+├── data_config/               # Hadoop ingestion configs
+├── insights/                  # Year-wise detailed markdowns
+├── README.md                  # Main documentation
 ```
+
+---
+
+## 📸 Dashboard Samples
+
+### Overall Performance Dashboard
+
+![Overall Dashboard](dashboards/overall_dashboard.png)
+
+### Year-wise Example (2014)
+
+![2014 Dashboard](dashboards/2014_dashboard.png)
+
+### Carrier Performance Breakdown
+
+![Carrier View](dashboards/carrier_performance.png)
 
 ---
