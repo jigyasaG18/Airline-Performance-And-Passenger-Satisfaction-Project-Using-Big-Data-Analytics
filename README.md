@@ -36,13 +36,17 @@ This project explores 10 years of U.S. airline performance data (2009–2018), d
 | Metric              | Best Year    | Worst Year   |
 | ------------------- | ------------ | ------------ |
 | On-Time Rate        | 2016 (75%)   | 2014 (47%)   |
-| Arrival Delay Avg   | 2016 (21m)   | 2017 (46m)   |
-| Departure Delay Avg | 2016 (19m)   | 2014 (46m)   |
+| Arrival Delay Avg   | 2016 (21m)   | 2017 (46 Minutes)   |
+| Departure Delay Avg | 2016 (19m)   | 2014 (46 Minutes)   |
 | % Flights Delayed   | 2016 (8%)    | 2014 (38%)   |
-| Longest Delay       | 2017 (13.6h) | 2010 (9.9h)  |
-| Avg Air Time        | 2018 (3.16h) | 2012 (1.21h) |
+| Longest Delay       | 2017 (13.6h) | 2010 (9.9 Hours)  |
+| Avg Air Time        | 2018 (3.16h) | 2012 (1.21 Hours) |
 
 **Insight:** 2016 stands out as the most efficient year. 2014 and 2017 were the most problematic for delays.
+
+**Dashboard:**
+
+<img width="960" height="536" alt="image" src="https://github.com/user-attachments/assets/c68e6b56-718c-484a-9cbb-6ccc417afaf3" />
 
 ---
 
@@ -65,6 +69,10 @@ This project explores 10 years of U.S. airline performance data (2009–2018), d
 4. Adjust scheduling buffers during peak.
 5. Monitor taxi-in/out times at high-volume hubs.
 
+**Dashboard:**
+
+<img width="960" height="538" alt="image" src="https://github.com/user-attachments/assets/eebedc58-a90e-460a-9a61-d4b5be579042" />
+
 ### 🔹 2010
 
 **Insights:**
@@ -81,6 +89,10 @@ This project explores 10 years of U.S. airline performance data (2009–2018), d
 4. Optimize crew resourcing for UA and US.
 5. Coordinate taxiing schedules at DEN.
 
+**Dashboard:**
+
+<img width="957" height="535" alt="image" src="https://github.com/user-attachments/assets/2c85bf1e-52d2-441e-8236-d4c9a9f85f5a" />
+
 ### 🔹 2011
 
 **Insights:**
@@ -95,6 +107,10 @@ This project explores 10 years of U.S. airline performance data (2009–2018), d
 3. Improve weather-response turnaround.
 4. Introduce automated taxi routing.
 5. Enable dynamic gate reallocation.
+
+**Dashboard:**
+
+<img width="957" height="534" alt="image" src="https://github.com/user-attachments/assets/3b4f13ad-7992-46e2-856f-bc9c75b9ae62" />
 
 ### 🔹 2012
 
@@ -111,6 +127,10 @@ This project explores 10 years of U.S. airline performance data (2009–2018), d
 4. Integrate data-driven scheduling using Hive.
 5. Use taxi-in analytics to limit ground hold.
 
+**Dashboard:**
+
+<img width="960" height="539" alt="image" src="https://github.com/user-attachments/assets/0f3d87b8-31f4-403a-b713-7fb66b2c3718" />
+
 ### 🔹 2013
 
 **Insights:**
@@ -125,6 +145,10 @@ This project explores 10 years of U.S. airline performance data (2009–2018), d
 3. Optimize route planning from MCI.
 4. Review scheduling lags in short-hauls.
 5. Enhance delay notification systems.
+
+**Dashboard:**
+
+<img width="959" height="538" alt="image" src="https://github.com/user-attachments/assets/849edecc-a1c6-49a1-b013-af5f9284ebdc" />
 
 ### 🔹 2014
 
@@ -141,6 +165,10 @@ This project explores 10 years of U.S. airline performance data (2009–2018), d
 4. Install gate availability prediction tools.
 5. Focus on weather-based diversion strategy.
 
+**Dashboard:**
+
+<img width="954" height="537" alt="image" src="https://github.com/user-attachments/assets/b84e0e36-266d-4a02-81c1-e38c6c2afb46" />
+
 ### 🔹 2015
 
 **Insights:**
@@ -154,6 +182,10 @@ This project explores 10 years of U.S. airline performance data (2009–2018), d
 3. Reduce LAX and SEA congestion.
 4. Align MQ flights with lower-delay corridors.
 5. Optimize HA ground operations.
+
+**Dashboard:**
+
+<img width="959" height="540" alt="image" src="https://github.com/user-attachments/assets/a91dcb48-a91d-466e-a9f6-0e0652a0b438" />
 
 ### 🔹 2016
 
@@ -170,6 +202,10 @@ This project explores 10 years of U.S. airline performance data (2009–2018), d
 4. Enable real-time ETL feedback loops.
 5. Expand on high-performance route modeling.
 
+**Dashboard:**
+
+<img width="956" height="538" alt="image" src="https://github.com/user-attachments/assets/b2be6330-cddc-4ed6-8bb1-66898003b875" />
+
 ### 🔹 2017
 
 **Insights:**
@@ -185,6 +221,10 @@ This project explores 10 years of U.S. airline performance data (2009–2018), d
 4. Strengthen pre-boarding logistics.
 5. Apply AI to predict gate hold times.
 
+**Dashboard:**
+
+<img width="960" height="538" alt="image" src="https://github.com/user-attachments/assets/f9323c61-e3de-421a-af7d-6203f734e8fd" />
+
 ### 🔹 2018
 
 **Insights:**
@@ -199,6 +239,10 @@ This project explores 10 years of U.S. airline performance data (2009–2018), d
 3. Add layover buffers for long-haul.
 4. Reinforce diversion handling protocol.
 5. Track long-route reliability KPIs.
+
+**Dashboard:**
+
+<img width="956" height="538" alt="image" src="https://github.com/user-attachments/assets/34e364ec-c410-423d-b41a-1903ed35c136" />
 
 ---
 
@@ -222,21 +266,5 @@ This project explores 10 years of U.S. airline performance data (2009–2018), d
 ├── insights/                  # Year-wise detailed markdowns
 ├── README.md                  # Main documentation
 ```
-
----
-
-## 📸 Dashboard Samples
-
-### Overall Performance Dashboard
-
-![Overall Dashboard](dashboards/overall_dashboard.png)
-
-### Year-wise Example (2014)
-
-![2014 Dashboard](dashboards/2014_dashboard.png)
-
-### Carrier Performance Breakdown
-
-![Carrier View](dashboards/carrier_performance.png)
 
 ---
