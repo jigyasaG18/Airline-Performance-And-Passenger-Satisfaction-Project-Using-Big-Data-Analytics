@@ -260,9 +260,10 @@ This project explores 10 years of U.S. airline performance data (2009–2018), d
 
 ```
 .
-├── hive_queries/               # Hive queries for processing
-├── dashboards/                 # Power BI dashboards
+├── hive_queries/              # Hive queries for processing
+├── dashboards/                # Power BI dashboards
 ├── data_config/               # Hadoop ingestion configs
+├── dax_queries/               # DAX Queries Used in Project
 ├── insights/                  # Year-wise detailed markdowns
 ├── README.md                  # Main documentation
 ```
