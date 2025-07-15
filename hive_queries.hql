@@ -37,6 +37,7 @@ CREATE EXTERNAL TABLE IF NOT EXISTS data_2009 (
 ROW FORMAT DELIMITED
 FIELDS TERMINATED BY ','
 STORED AS TEXTFILE
+TBLPROPERTIES ("skip.header.line.count"="1")
 LOCATION '/user/flights/2009';
 
 -- Step 4: Repeat Table Creation for Remaining Years (2010–2018)
