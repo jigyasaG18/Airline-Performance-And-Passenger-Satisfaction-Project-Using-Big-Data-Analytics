@@ -1,0 +1,99 @@
+-- ===============================================
+-- DAX Queries Documentation for Airline Dashboard (2009–2018)
+-- Purpose: Define and explain Power BI DAX queries used per year
+-- ===============================================
+
+-- What is DAX?
+-- -----------------------------------------------
+-- DAX (Data Analysis Expressions) is a formula language used in Power BI, Excel Power Pivot, and SSAS Tabular models.
+-- It allows users to create custom measures, calculated columns, KPIs, and perform dynamic aggregations.
+
+-- Why DAX in This Project?
+-- -----------------------------------------------
+-- The airline dataset (2009–2018) is visualized in Power BI. DAX is used to compute year-wise insights:
+-- - Delay percentages
+-- - On-time performance
+-- - Average delays (arrival/departure)
+-- - Air time and longest delays
+-- Each DAX measure is written per year (e.g., data_2009, data_2010, ...)
+
+-- ==========================
+-- DAX Measures for data_2009
+-- ==========================
+
+-- % Flights Delayed (>15 min)
+% Flights Delayed 2009 (>15 min) = 
+VAR TotalFlights = COUNT('flights data_2009'[FL_DATE])
+RETURN
+COALESCE(
+    IF(
+        TotalFlights = 0,
+        BLANK(),
+        DIVIDE(
+            CALCULATE(COUNTROWS('flights data_2009'), 'flights data_2009'[ARR_DELAY] > 15),
+            TotalFlights
+        ) * 100
+    ), 
+    0
+)
+
+-- Average Air Time in Hours
+Average Air Time 2009 = 
+AVERAGE('flights data_2009'[AIR_TIME]) / 60
+
+-- Average Arrival Delay (Delayed Flights Only)
+Average Arrival Delay (Delayed Flights Only) = 
+VAR AvgDelay =
+    CALCULATE(
+        AVERAGE('flights data_2009'[ARR_DELAY]),
+        FILTER('flights data_2009', 'flights data_2009'[ARR_DELAY] > 0)
+    )
+RETURN
+IF(
+    ISBLANK(AvgDelay),
+    0,
+    AvgDelay
+)
+
+-- Average Departure Delay (Delayed Flights Only)
+Average Departure Delay 2009 (Delayed Only) = 
+VAR AvgDelay = 
+    CALCULATE(
+        AVERAGE('flights data_2009'[DEP_DELAY]),
+        FILTER('flights data_2009', 'flights data_2009'[DEP_DELAY] > 0)
+    )
+RETURN
+IF(
+    ISBLANK(AvgDelay),
+    0,
+    AvgDelay
+)
+
+-- Longest Positive Delay (in Hours)
+Longest Delay (Positive Only) = 
+VAR MaxDelay = 
+    CALCULATE(
+        MAX('flights data_2009'[ARR_DELAY])/60,
+        'flights data_2009'[ARR_DELAY] > 0
+    )
+RETURN
+IF(ISBLANK(MaxDelay), 0, MaxDelay)
+
+-- On-Time Arrival Rate (%)
+OnTime Arrival Rate 2009 (%) = 
+VAR TotalFlights = COUNT('flights data_2009'[FL_DATE])
+RETURN
+COALESCE(
+    IF(
+        TotalFlights = 0,
+        BLANK(),
+        DIVIDE(
+            CALCULATE(COUNTROWS('flights data_2009'), 'flights data_2009'[ARR_DELAY] <= 0),
+            TotalFlights
+        ) * 100
+    ),
+    0
+)
+
+-- Note:
+-- Replace 'data_2009' with 'data_2010', 'data_2011', ... up to 'data_2018' to create per-year DAX calculations.
